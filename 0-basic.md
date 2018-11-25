@@ -9,7 +9,7 @@ yum upgrade -y
 ```shell
 hostnamectl set-hostname aleserver
 
-#使用下面的命令，重启使之生效
+//使用下面的命令，重启使之生效
 
 systemctl restart systemd-hostnamed
 ```
@@ -27,7 +27,7 @@ vi /etc/ssh/sshd_config
 yum -y install policycoreutils-python
 semanage port -a -t ssh_port_t -p tcp 22022
 
-#检测是否成功
+//检测是否成功
 semanage port -l | grep ssh
 ```
 
@@ -46,7 +46,7 @@ firewall-cmd  --permanent --zone=public --add-port=443/tcp
 cp /usr/lib/firewalld/services/ssh.xml /etc/firewalld/services/
 vi /etc/firewalld/services/ssh.xml
 
-# 修改端口为22022
+// 修改端口为22022
 :wq
 ```
 * 重新载入，使之生效
@@ -86,17 +86,17 @@ vi /etc/pam.d/su
 ```shell
 vim /etc/ssh/sshd_config
 
-找到 #StrictModes yes 改成 StrictModes no （去掉注释后改成 no） 
-找到 #PubkeyAuthentication yes 去掉注释 
-找到 #AuthorizedKeysFile .ssh/authorized_keys 去掉注释
+// 找到 #StrictModes yes 改成 StrictModes no （去掉注释后改成 no） 
+// 找到 #PubkeyAuthentication yes 去掉注释 
+// 找到 #AuthorizedKeysFile .ssh/authorized_keys 去掉注释
 :wq
 ``` 
 * 使用Jason登录
 ```shell
 ssh-keygen -t RSA -C "yuomail@gmail.com"
-# 第一次提示存储位置，直接回车
-# 第二次提示是否需要密码，空密码直接回车
-# 第三次重复密码
+// 第一次提示存储位置，直接回车
+// 第二次提示是否需要密码，空密码直接回车
+// 第三次重复密码
 
 cd /home/Jason/.ssh
 cp id_rsa.pub authorized_keys
