@@ -61,15 +61,15 @@ systemctl restart  firewalld
 ### 使用秘钥登录
 * 添加用户
 ```shell
-useradd Jason
+useradd Tom
 ```
 * 设置密码
 ```shell
-passwd Jason
+passwd Tom
 ```
 * 加入wheel组
 ```shell
-usermod -G wheel Jason  
+usermod -G wheel Tom  
 ```
 * 修改配置文件
 ```shell
@@ -91,14 +91,14 @@ vim /etc/ssh/sshd_config
 // 找到 #AuthorizedKeysFile .ssh/authorized_keys 去掉注释
 :wq
 ``` 
-* 使用Jason登录
+* 使用Tom登录
 ```shell
 ssh-keygen -t RSA -C "yuomail@gmail.com"
 // 第一次提示存储位置，直接回车
 // 第二次提示是否需要密码，空密码直接回车
 // 第三次重复密码
 
-cd /home/Jason/.ssh
+cd /home/Tom/.ssh
 cp id_rsa.pub authorized_keys
 chmod 600 authorized_keys 
 ```
@@ -132,4 +132,4 @@ wq:
 systemctl reload sshd 
 systemctl restart sshd.service
 ```
-此时只能用Jason账号登录。
+此时只能用Tom账号登录。
