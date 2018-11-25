@@ -103,7 +103,7 @@ cp id_rsa.pub authorized_keys
 chmod 600 authorized_keys 
 ```
 * 下载私钥文件保存到本地
-
+// 这部分有需要的同学可以留言，我再图文贴上来
 * 配置xshell或SecureCRT等
 
 * 使用秘钥登录
