@@ -19,7 +19,7 @@ systemctl restart systemd-hostnamed
 ```shell
 vi /etc/ssh/sshd_config
 
-# 搜索 Port，去掉#号，把22改成喜欢的端口，如22022
+// 搜索 Port，去掉#号，把22改成喜欢的端口，如22022
 :wq
 ```
 * 设置semanage
